@@ -7,13 +7,20 @@ that shows how the RDF output will look for one row. See [examples/cars](example
 Building
 --------
 
-`ant clean dist` will create a local build in the `dist` sub-directory.
+`mvn clean install` will build the project.
 
 Running
 -------
 
-You can run the tool with the command `java -jar dist/lib/csv2rdf.jar` followed by arguments.
+You can run the tool with the command `mvn exec:java` followed by arguments (`-Dexec.args="arg1 arg2 arg3"`).
 
-You can see the help screen with the command `java -jar dist/lib/csv2rdf.jar help convert`.
+The running command template is the following:
 
-You can run the conversion for the example using `java -jar dist/lib/csv2rdf.jar examples/cars/template.ttl examples/cars/cars.csv cars.ttl`. 
+```
+mvn exec:java -Dexec.args="<templateFile> <csvFile> <outputFile>" 
+``` 
+
+You can run the conversion for the example using: 
+```
+mvn exec:java -Dexec.args="src/main/resources/input/examples/cars/template.ttl src/main/resources/input/examples/cars/cars.cs src/main/resources/output/cars.ttl" 
+``` 
