@@ -1,13 +1,17 @@
-name: Java CI with Maven
+name: Java CI with Maven and SonarCloud
 
 on:
   push:
-    branches: [main, dev]
+    # 10-set-up-sonarcloud only for testing if it works as expected
+    branches: [main, dev, 10-set-up-sonarcloud]
   pull_request:
+    types: [opened, synchronize, reopened]
     branches: [main, dev]
 
 jobs:
   build:
+    name: Build
+
     runs-on: ubuntu-latest
 
     steps:
@@ -18,8 +22,6 @@ jobs:
           java-version: "17"
           distribution: "temurin"
           cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml --no-transfer-progress
 
       - name: Cache local Maven repository
         uses: actions/cache@v2
@@ -28,3 +30,23 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=BME-MIT-IET_iet-hf-2022-dzsungelharcosok --no-transfer-progress
