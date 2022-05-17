@@ -22,15 +22,5 @@ mvn exec:java -Dexec.args="<templateFile> <csvFile> <outputFile>"
 
 You can run the conversion for the example using: 
 ```
-mvn exec:java -Dexec.args="src/main/resources/input/examples/cars/template.ttl src/main/resources/input/examples/cars/cars.cs src/main/resources/output/cars.ttl" 
+mvn exec:java -Dexec.args="src/main/resources/input/examples/cars/template.ttl src/main/resources/input/examples/cars/cars.csv src/main/resources/output/cars.ttl" 
 ``` 
-
-Docker
--------
-
-For building and running the tool in a Docker container run the `build.cmd` file with the file arguments as below:
-```
-.\build.cmd <templateFile> <csvFile> <outputFile>
-``` 
-
-The requested output file is already generated in the folder `usr/src/iet-hf-2022-dzsungelharcosok/src/main/resources/output` when the container starts up.
