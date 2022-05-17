@@ -21,6 +21,8 @@
         <sesame-onejar.version>2.7.10</sesame-onejar.version>
         <opencsv.version>2.4</opencsv.version>
         <commons-io.version>2.4</commons-io.version>
+        <sonar.organization>bme-mit-iet-org</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <repositories>
