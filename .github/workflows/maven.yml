@@ -2,8 +2,7 @@ name: Java CI with Maven and SonarCloud
 
 on:
   push:
-    # 10-set-up-sonarcloud only for testing if it works as expected
-    branches: [main, dev, 10-set-up-sonarcloud]
+    branches: [main, dev]
   pull_request:
     types: [opened, synchronize, reopened]
     branches: [main, dev]
