@@ -89,7 +89,7 @@
                     <artifactId>exec-maven-plugin</artifactId>
                     <version>${exec-maven-plugin.version}</version>
                     <configuration>
-                        <mainClass>com.complexible.common.csv.CSV2RDF</mainClass>
+                        <mainClass>com.csv2rdf.csv.CSV2RDF</mainClass>
                     </configuration>
                 </plugin>
             </plugins>
