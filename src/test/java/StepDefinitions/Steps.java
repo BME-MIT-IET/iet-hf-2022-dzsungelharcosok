@@ -9,8 +9,7 @@ import static junit.framework.Assert.assertEquals;
 
 class IsItTtl{
     static String isItTtl(String result){
-        //return "ttl".equals(result) ? "ttl" : "csv";
-        return "ttl";
+        return "ttl".equals(result) ? "ttl" : "csv";
     }
 }
 
