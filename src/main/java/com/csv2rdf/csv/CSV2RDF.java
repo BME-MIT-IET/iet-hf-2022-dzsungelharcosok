@@ -50,8 +50,8 @@ public class CSV2RDF implements Runnable {
     @Arguments(description = "File arguments. The extension of template file and output file determines the RDF format that will be used for them (.ttl = Turtle, .nt = N-Triples, .rdf = RDF/XML)", title = {
             "templateFile", "csvFile", "outputFile"})
     public List<String> files;
-    private int inputRows = 0;
-    private int outputTriples = 0;
+    protected static int inputRows = 0;
+    protected static int outputTriples = 0;
 
     public void run() {
         Preconditions.checkArgument(files.size() >= 3, "Missing arguments");
@@ -78,11 +78,11 @@ public class CSV2RDF implements Runnable {
             Template template = new Template(Arrays.asList(row), templateFile, writer, noHeader);
 
             if (noHeader) {
-                template.generate(row, writer, inputRows, outputTriples);
+                template.generate(row, writer);
             }
 
             while ((row = reader.readNext()) != null) {
-                template.generate(row, writer, inputRows, outputTriples);
+                template.generate(row, writer);
             }
 
             writer.endRDF();
@@ -93,6 +93,7 @@ public class CSV2RDF implements Runnable {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
         System.out.printf("Converted %,d rows to %,d triples%n", inputRows, outputTriples);
     }
 

@@ -19,8 +19,11 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.csv2rdf.csv.CSV2RDF.inputRows;
+import static com.csv2rdf.csv.CSV2RDF.outputTriples;
+
 public class Template {
-    private final List<StatementGenerator> stmts = Lists.newArrayList();
+    private static List<StatementGenerator> stmts = Lists.newArrayList();
     private final List<ValueProvider> valueProviders = Lists.newArrayList();
     final boolean noHeader;
 
@@ -148,7 +151,7 @@ public class Template {
         parser.parse(new StringReader(templateStr), "urn:");
     }
 
-    public void generate(String[] row, RDFHandler handler, int inputRows, int outputTriples) throws RDFHandlerException {
+    public static void generate(String[] row, RDFHandler handler) throws RDFHandlerException {
         inputRows++;
         for (StatementGenerator stmt : stmts) {
             outputTriples++;
