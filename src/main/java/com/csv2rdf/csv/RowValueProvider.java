@@ -1,7 +1,5 @@
 package com.csv2rdf.csv;
 
-import java.nio.charset.Charset;
-
 public class RowValueProvider extends ValueProvider {
     private final int colIndex;
 

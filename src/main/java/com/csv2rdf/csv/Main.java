@@ -11,9 +11,10 @@ public class Main {
 
     public static void main(String[] args) {
         Logger logger = Logger.getLogger(Main.class.getName());
+        CSV2RDF csv2RDF = new CSV2RDF();
         try {
             Cli.<Runnable>builder("csv2rdf").withDescription("Converts a CSV file to RDF based on a given template")
-                    .withDefaultCommand(CSV2RDF.class).withCommand(CSV2RDF.class).withCommand(Help.class)
+                    .withDefaultCommand(csv2RDF.getClass()).withCommand(csv2RDF.getClass()).withCommand(Help.class)
                     .build().parse(args).run();
         } catch (Exception e) {
             logger.log(Level.FINE, "ERROR: {0}", e.getMessage());

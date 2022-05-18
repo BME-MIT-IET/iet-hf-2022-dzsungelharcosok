@@ -4,43 +4,21 @@ package com.csv2rdf.csv;
 
 import java.io.File;
 import java.io.Reader;
-import java.io.StringReader;
 import java.io.Writer;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import au.com.bytecode.opencsv.CSVReader;
-import com.github.rvesse.airline.Cli;
 import com.github.rvesse.airline.annotations.Arguments;
 import com.github.rvesse.airline.annotations.Command;
 import com.github.rvesse.airline.annotations.Option;
-import com.github.rvesse.airline.help.Help;
-import org.openrdf.model.BNode;
-import org.openrdf.model.Literal;
-import org.openrdf.model.Resource;
-import org.openrdf.model.Statement;
-import org.openrdf.model.URI;
-import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.rio.*;
-import org.openrdf.rio.helpers.BasicParserSettings;
-import org.openrdf.rio.helpers.RDFHandlerBase;
 
-import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
-import com.google.common.hash.HashCode;
-import com.google.common.hash.Hashing;
-import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
 
 /**
@@ -54,7 +32,7 @@ public class CSV2RDF implements Runnable {
     private static final char DEFAULT_QUOTE_CHARACTER = '\"';
     private static final char DEFAULT_ESCAPE_CHARACTER = '\\';
     protected static final Charset INPUT_CHARSET = Charset.defaultCharset();
-    protected static final Charset OUTPUT_CHARSET = Charsets.UTF_8;
+    protected static final Charset OUTPUT_CHARSET = StandardCharsets.UTF_8;
     protected static final ValueFactory FACTORY = ValueFactoryImpl.getInstance();
 
     @Option(name = "--no-header", arity = 0, description = "If csv file does not contain a header row")
@@ -121,22 +99,5 @@ public class CSV2RDF implements Runnable {
     private static char toChar(String value) {
         Preconditions.checkArgument(value.length() == 1, "Expecting a single character but got %s", value);
         return value.charAt(0);
-    }
-
-    private static ParserConfig getParserConfig() {
-        ParserConfig config = new ParserConfig();
-
-        Set<RioSetting<?>> aNonFatalErrors = Sets.<RioSetting<?>>newHashSet(
-                BasicParserSettings.FAIL_ON_UNKNOWN_DATATYPES, BasicParserSettings.FAIL_ON_UNKNOWN_LANGUAGES);
-
-        config.setNonFatalErrors(aNonFatalErrors);
-
-        config.set(BasicParserSettings.FAIL_ON_UNKNOWN_DATATYPES, false);
-        config.set(BasicParserSettings.FAIL_ON_UNKNOWN_LANGUAGES, false);
-        config.set(BasicParserSettings.VERIFY_DATATYPE_VALUES, false);
-        config.set(BasicParserSettings.VERIFY_LANGUAGE_TAGS, false);
-        config.set(BasicParserSettings.VERIFY_RELATIVE_URIS, false);
-
-        return config;
     }
 }

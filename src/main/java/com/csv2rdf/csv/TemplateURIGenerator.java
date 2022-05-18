@@ -1,7 +1,6 @@
 package com.csv2rdf.csv;
 
 import org.openrdf.model.URI;
-import org.openrdf.model.ValueFactory;
 
 public class TemplateURIGenerator extends TemplateValueGenerator<URI> {
 
