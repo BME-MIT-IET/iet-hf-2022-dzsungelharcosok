@@ -4,37 +4,35 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import java.util.SortedMap;
+import static junit.framework.Assert.assertEquals;
+
+
+class IsItTtl{
+    static String isItTtl(String result){
+        return "ttl".equals(result) ? "ttl" : "csv";
+    }
+}
 
 public class Steps {
-    @Given("the user is on login page")
-    public void the_user_is_on_login_page() {
-        System.out.println("The user is on login page");
+    private String result;
+    private String actualResult;
 
-    }
-    @When("the user valid credentials")
-    public void the_user_valid_credentials() {
-        System.out.println("Entered username and password");
-    }
-    @When("hits submit")
-    public void hits_submit() {
-        System.out.println("Clicked on submit");
-    }
-    @Then("user should be logged in successfully")
-    public void user_should_be_logged_in_successfully() {
-        System.out.println("Yeah I an logged in");
+    @Given("result is ttl")
+    public void result_is_ttl() {
+        result = "ttl";
     }
 
-    @Given("the user is in project")
-    public void the_user_is_on_project_main() {
-        System.out.println("the user is in project");
+    @Given("result is csv")
+    public void result_is_csv() {
+        result = "csv";
     }
-    @When("the user start the test")
-    public void the_user_start_the_test() {
-        System.out.println("start the test");
+
+    @When("the user start the converter")
+    public void the_user_start_the_converter() {
+        actualResult = IsItTtl.isItTtl(result);
     }
-    @Then("user should be see the test result")
-    public void user_should_be_see_the_test_result() {
-        System.out.println("User see the resuls");
+    @Then("the converted file extension should {string}")
+    public void the_converter_worked(String expectedResult) {
+        assertEquals(expectedResult ,actualResult);
     }
 }
