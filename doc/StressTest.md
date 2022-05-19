@@ -14,7 +14,8 @@ mvn exec:java -Dexec.args="src/main/resources/input/examples/cars/template.ttl s
     Ez a jelenség még 500 sor felett is még megfigyelhető volt, ahogy a lenti ábra is mutatja:
     ![500.png](images/500.png)
 
-- Az első egyértelműen kimutatható eredmények a 3000-es nagyságrendben jelentkeztek. Itt az alkalmazásnak már 1,9 másodpercbe telt feldolgoznia az adatokat. 
+- Az első egyértelműen kimutatható eredmények a 3000-es nagyságrendben jelentkeztek. Itt az alkalmazásnak már 1,9 másodpercbe telt feldolgoznia az adatokat.
+ 
     ![3000.png](images/3000.png)
 
 ## A számok növelése
@@ -22,7 +23,8 @@ mvn exec:java -Dexec.args="src/main/resources/input/examples/cars/template.ttl s
 ![10000.png](images/10000.png)
 - Amikor megtízszereztük, vagyis 100.000 sorra növeltük a bemenetet, a futási idő csupán a kétszeresére nőtt.
 ![100,000.png](images/100,000.png)
-A teszteket megismételtük többször is a százezres nagyságrendben köztük 500.000 sornál is, ahol a lefutás már 20 másodpercig tartott.
+
+    A teszteket megismételtük többször is a százezres nagyságrendben köztük 500.000 sornál is, ahol a lefutás már 20 másodpercig tartott.
 ![500,000.png](images/500,000.png)
 - Egy millió sornál az alkalmazás már több mint fél percig dolgozta fel az adatokat és kétmilió sornál ez az idő másfél percre nőtt.
 ![1,000,000.png](images/1,000,000.png)
