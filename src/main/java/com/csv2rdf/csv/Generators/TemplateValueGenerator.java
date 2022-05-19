@@ -1,5 +1,6 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Generators;
 
+import com.csv2rdf.csv.Providers.ValueProvider;
 import org.openrdf.model.Value;
 
 abstract class TemplateValueGenerator<V extends Value> implements ValueGenerator<V> {

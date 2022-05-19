@@ -1,5 +1,6 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Generators;
 
+import com.csv2rdf.csv.CSV2RDF;
 import org.openrdf.model.BNode;
 
 public class BNodeGenerator implements ValueGenerator<BNode> {

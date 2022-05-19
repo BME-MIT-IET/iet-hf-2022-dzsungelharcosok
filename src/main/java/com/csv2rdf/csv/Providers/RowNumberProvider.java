@@ -1,4 +1,4 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Providers;
 
 
 public class RowNumberProvider extends ValueProvider {

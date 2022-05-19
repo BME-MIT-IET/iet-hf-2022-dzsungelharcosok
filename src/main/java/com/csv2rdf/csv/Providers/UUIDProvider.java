@@ -1,4 +1,4 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Providers;
 
 import java.util.UUID;
 

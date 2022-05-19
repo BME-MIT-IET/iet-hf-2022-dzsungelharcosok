@@ -1,6 +1,6 @@
 package StepDefinitions;
 
-import com.csv2rdf.csv.BNodeGenerator;
+import com.csv2rdf.csv.Generators.BNodeGenerator;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
