@@ -19,13 +19,7 @@
 	gr:hasMakeAndModel :Model-e4v61spgp70791ce77bv3n0ethjdr0fp ;
 	vso:modelDate "1997-01-01"^^xsd:date .
 
-:Offer-oods7439p4sb6d6ssfdqcacm4aa78k9n a gr:Offering ;
-	rdfs:comment "ac, abs, moon" ;
-	gr:includes :Car-1 ;
-	gr:hasBusinessFunction gr:Sell ;
-	gr:hasPriceSpecification _:node1g3c91q5ox1 .
 
-_:node1g3c91q5ox1 a gr:UnitPriceSpecification ;
 	gr:hasCurrency "USD"^^xsd:string ;
 	gr:hasCurrencyValue "3000.00"^^xsd:float .
 
@@ -42,13 +36,7 @@ _:node1g3c91q5ox1 a gr:UnitPriceSpecification ;
 	gr:hasMakeAndModel :Model-mbvb602k2eh76po2rgk2r0um6unb18f6 ;
 	vso:modelDate "1999-01-01"^^xsd:date .
 
-:Offer-qnfjv5hnahcjng8mt88dkd2arg7doha1 a gr:Offering ;
-	rdfs:comment "27ed719a-6515-478d-8da0-1f6f2b14e1cc" ;
-	gr:includes :Car-2 ;
-	gr:hasBusinessFunction gr:Sell ;
-	gr:hasPriceSpecification _:node1g3c91q5ox2 .
 
-_:node1g3c91q5ox2 a gr:UnitPriceSpecification ;
 	gr:hasCurrency "USD"^^xsd:string ;
 	gr:hasCurrencyValue "4900.00"^^xsd:float .
 
@@ -65,13 +53,7 @@ _:node1g3c91q5ox2 a gr:UnitPriceSpecification ;
 	gr:hasMakeAndModel :Model-2undh962b7qt3kpgoouqlcun7k90ervq ;
 	vso:modelDate "1999-01-01"^^xsd:date .
 
-:Offer-t1659g321kfad0ot9e7qqb2uth6ejvn6 a gr:Offering ;
-	rdfs:comment "27ed719a-6515-478d-8da0-1f6f2b14e1cc" ;
-	gr:includes :Car-3 ;
-	gr:hasBusinessFunction gr:Sell ;
-	gr:hasPriceSpecification _:node1g3c91q5ox3 .
 
-_:node1g3c91q5ox3 a gr:UnitPriceSpecification ;
 	gr:hasCurrency "USD"^^xsd:string ;
 	gr:hasCurrencyValue "5000.00"^^xsd:float .
 
@@ -88,13 +70,11 @@ _:node1g3c91q5ox3 a gr:UnitPriceSpecification ;
 	gr:hasMakeAndModel :Model-2spkv7ol89mupb0elrr27n76vq7u0fkk ;
 	vso:modelDate "1996-01-01"^^xsd:date .
 
-:Offer-070cu2lmfu820d2r1bmtgl4scv20rdh1 a gr:Offering ;
+
 	rdfs:comment """MUST SELL!
 air, moon roof, loaded""" ;
 	gr:includes :Car-4 ;
 	gr:hasBusinessFunction gr:Sell ;
-	gr:hasPriceSpecification _:node1g3c91q5ox4 .
 
-_:node1g3c91q5ox4 a gr:UnitPriceSpecification ;
 	gr:hasCurrency "USD"^^xsd:string ;
 	gr:hasCurrencyValue "4799.00"^^xsd:float .

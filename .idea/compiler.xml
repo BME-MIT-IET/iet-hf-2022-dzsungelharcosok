@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="iet-hf-2022-dzsungelharcosok" target="17" />
+      <module name="iet-hf-2022-dzsungelharcosok" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
