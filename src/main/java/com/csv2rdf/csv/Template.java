@@ -25,11 +25,15 @@ import static com.csv2rdf.csv.CSV2RDF.outputTriples;
 public class Template {
     private static List<StatementGenerator> stmts = Lists.newArrayList();
     private final List<ValueProvider> valueProviders = Lists.newArrayList();
-    final boolean noHeader;
+    boolean noHeader;
 
     Template(List<String> cols, File templateFile, RDFWriter writer, boolean noHeader) throws IOException, RDFHandlerException, RDFParseException {
         parseTemplate(cols, templateFile, writer);
         this.noHeader = noHeader;
+    }
+
+    public Template(boolean b) {
+        this.noHeader = b;
     }
 
     private String insertPlaceholders(List<String> cols, File templateFile) throws IOException {
@@ -67,7 +71,7 @@ public class Template {
 
     }
 
-    private int getIndex(String varName, List<String> cols) {
+    public int getIndex(String varName, List<String> cols) {
         int index = -1;
         if (!noHeader) {
             index = cols.indexOf(varName);

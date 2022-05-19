@@ -7,9 +7,9 @@ Feature: getIndex work with chars
   Scenario: function input is a number
     Given a number as a string and an initialized list of columns
     When  I ask whether the function is working with number
-    Then  I should be told the it is working
+    Then  I should be told it is working
 
   Scenario: function input is a string
     Given a string and an initialized list of columns
     When  I ask whether the function is working with string
-    Then  I should be told the it is working
+    Then  I should be told it is working
