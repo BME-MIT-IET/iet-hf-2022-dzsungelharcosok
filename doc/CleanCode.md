@@ -1,4 +1,4 @@
-# IET-HF-2022-DZSUNGELHARCOSOK
+# Clean code - SonarLint
 
 ## Java osztályok külön fájlba szedése
 
