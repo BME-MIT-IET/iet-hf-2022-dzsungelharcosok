@@ -31,9 +31,9 @@ public class CSV2RDF implements Runnable {
     private static final char DEFAULT_SEPARATOR = ',';
     private static final char DEFAULT_QUOTE_CHARACTER = '\"';
     private static final char DEFAULT_ESCAPE_CHARACTER = '\\';
-    protected static final Charset INPUT_CHARSET = Charset.defaultCharset();
-    protected static final Charset OUTPUT_CHARSET = StandardCharsets.UTF_8;
-    protected static final ValueFactory FACTORY = ValueFactoryImpl.getInstance();
+    public static final Charset INPUT_CHARSET = Charset.defaultCharset();
+    public static final Charset OUTPUT_CHARSET = StandardCharsets.UTF_8;
+    public static final ValueFactory FACTORY = ValueFactoryImpl.getInstance();
 
     @Option(name = "--no-header", arity = 0, description = "If csv file does not contain a header row")
     boolean noHeader = false;

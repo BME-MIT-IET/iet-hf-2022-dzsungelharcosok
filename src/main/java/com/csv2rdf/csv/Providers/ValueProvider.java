@@ -1,14 +1,15 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Providers;
 
+import com.csv2rdf.csv.CSV2RDF;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 
 import java.util.UUID;
 
-abstract class ValueProvider {
-    protected final String placeholder = UUID.randomUUID().toString();
-    protected boolean isHash;
+public abstract class ValueProvider {
+    public final String placeholder = UUID.randomUUID().toString();
+    public boolean isHash;
 
 
     public String provide(int rowIndex, String[] row) {

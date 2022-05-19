@@ -1,5 +1,6 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Generators;
 
+import com.csv2rdf.csv.CSV2RDF;
 import org.openrdf.model.*;
 
 public class StatementGenerator {
@@ -7,13 +8,13 @@ public class StatementGenerator {
     private final ValueGenerator<URI> predicate;
     private final ValueGenerator<Value> object;
 
-    StatementGenerator(ValueGenerator<Resource> s, ValueGenerator<URI> p, ValueGenerator<Value> o) {
+    public StatementGenerator(ValueGenerator<Resource> s, ValueGenerator<URI> p, ValueGenerator<Value> o) {
         this.subject = s;
         this.predicate = p;
         this.object = o;
     }
 
-    Statement generate(int rowIndex, String[] row) {
+    public Statement generate(int rowIndex, String[] row) {
         Resource s = subject.generate(rowIndex, row);
         URI p = predicate.generate(rowIndex, row);
         Value o = object.generate(rowIndex, row);

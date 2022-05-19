@@ -1,5 +1,7 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Generators;
 
+import com.csv2rdf.csv.CSV2RDF;
+import com.csv2rdf.csv.Providers.ValueProvider;
 import org.openrdf.model.Literal;
 import org.openrdf.model.URI;
 
@@ -7,7 +9,7 @@ public class TemplateLiteralGenerator extends TemplateValueGenerator<Literal> {
     private final URI datatype;
     private final String lang;
 
-    TemplateLiteralGenerator(Literal literal, ValueProvider[] providers) {
+    public TemplateLiteralGenerator(Literal literal, ValueProvider[] providers) {
         super(literal.getLabel(), providers);
 
         this.datatype = literal.getDatatype();

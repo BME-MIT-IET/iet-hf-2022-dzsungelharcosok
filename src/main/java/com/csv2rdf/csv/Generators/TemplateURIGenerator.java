@@ -1,11 +1,13 @@
-package com.csv2rdf.csv;
+package com.csv2rdf.csv.Generators;
 
+import com.csv2rdf.csv.CSV2RDF;
+import com.csv2rdf.csv.Providers.ValueProvider;
 import org.openrdf.model.URI;
 
 public class TemplateURIGenerator extends TemplateValueGenerator<URI> {
 
 
-    TemplateURIGenerator(String template, ValueProvider[] providers) {
+    public TemplateURIGenerator(String template, ValueProvider[] providers) {
         super(template, providers);
     }
 
