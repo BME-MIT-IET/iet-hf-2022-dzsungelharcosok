@@ -1,0 +1,2 @@
+docker image build -t iet-hf-2022-dzsungelharcosok:v1.0 --build-arg templateFile="%1" --build-arg csvFile="%2" --build-arg outputFile="%3%" .
+docker container run -d --name dzsungelharcosok -t iet-hf-2022-dzsungelharcosok:v1.0 bash

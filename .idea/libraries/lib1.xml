@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lib/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/slf4j-jdk14-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/guava-15.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/openrdf-sesame-2.7.10-onejar.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/airline-0.7.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/javax.inject-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lib/opencsv-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
