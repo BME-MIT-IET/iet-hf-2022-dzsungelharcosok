@@ -24,3 +24,8 @@ ellenőrzések a fájlokra.
 
 A clean code elvek követése érdekében a túl hosszú metódusokat több rövid metódusba szedtünk szét. A
 fájlok könnyebb átláthatósága miatt külön packagebe szedtük az egybe tartozó osztályokat.
+
+#### Fájl szerkezet előtte és utána:
+![files-before.png](images/files-before.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&darr;
+![files-after.png](images/files-after.png)
