@@ -7,7 +7,7 @@ public class BNodeGenerator implements ValueGenerator<BNode> {
     private int generatedRow = -1;
 
     public BNode generate(int rowIndex, String[] row) {
-        if (value == null || generatedRow != rowIndex) {
+        if (generatedRow != rowIndex) {
             value = CSV2RDF.FACTORY.createBNode();
             generatedRow = rowIndex;
         }
