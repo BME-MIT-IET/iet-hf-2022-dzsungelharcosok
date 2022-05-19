@@ -1,18 +1,22 @@
 Feature: Are there enough arguments?
-  Minimum of two arguments are required to run the converter
+  Minimum and maximum of three arguments are required to run the converter.
 
   Background:
-    Given a list to arguments
+    Given generate an empty list to arguments
 
-  Scenario Outline: Number of arguments is or is not enough
+  Scenario: Number of arguments is 3
+    Given number of arguments is three
+    When I ask whether three arguments are enough
+    Then  I should be told Yes
+
+  Scenario Outline: Number of arguments is not 3
     Given number of arguments is "<argument>"
-    When I ask are there enough arguments
-    Then  Then I should be told "<answer>"
+    When I ask whether "<argument>" arguments are enough
+    Then I should be told No
 
     Examples:
-      | argument | answer |
-      | 3        | Yes    |
-      | 2        | No     |
-      | 1        | No     |
-      | 0        | No     |
-      | 4        | No     |
+      | argument |
+      | 2        |
+      | 1        |
+      | 0        |
+      | 4        |
