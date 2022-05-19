@@ -13,11 +13,12 @@ A Docker a következők miatt hasznos az aktuális projekt esetében:
 A projekt esetében egy `openjdk:17-jdk-alpine` base image-t vettünk alapul, és a Dockerfile megfelelő konfigurálása után, illetve a segéd `.cmd` script elkészítése után előáll a sikeres Docker konténer deploy:
 ```
 .\build.cmd src/main/resources/input/examples/cars/template.ttl src/main/resources/input/examples/cars/cars.csv src/main/resources/output/cars.ttl
-``` 
+```
 
--img 
-
+![docker1.png](images/docker1.png)
 
 Természetesen a Maven-es parancsok ugyanúgy futtathatóak a konténerben, mint a saját gépünkön.
+
+![img.png](images/docker2.png)
 
 

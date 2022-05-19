@@ -30,4 +30,4 @@ mvn exec:java -Dexec.args="src/main/resources/input/examples/cars/template.ttl s
 
 Sikeres futattás után a következő fogad minket: 
 
-![img.png](images/img.png)
+![img.png](images/maven.png)
