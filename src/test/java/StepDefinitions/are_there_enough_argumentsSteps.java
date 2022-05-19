@@ -1,7 +1,6 @@
 package StepDefinitions;
 
 import com.csv2rdf.csv.CSV2RDF;
-import com.google.common.base.Preconditions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,14 +10,8 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 
 public class are_there_enough_argumentsSteps {
-    private boolean expectedThrow;
+    private boolean itHasException;
     private final CSV2RDF testCSV2RDF = new CSV2RDF();
-
-    private String areThereEnoughArguments(int numberOfArguments) {
-        int expectedArgumentsNumber = 3;
-        return (expectedArgumentsNumber == numberOfArguments) ? "Yes" : "No";
-    }
-
 
     @Given("generate an empty list to arguments")
     public void generataAnEmptyListToArguments() {
@@ -33,13 +26,11 @@ public class are_there_enough_argumentsSteps {
         testCSV2RDF.files.add("src/main/resources/output/cars.ttl");
     }
 
-
-
     @When("I ask whether three arguments are enough")
     public void i_ask_whether_arguments_are_enough() {
         try{
             testCSV2RDF.run();
-            expectedThrow = false;
+            itHasException = false;
         }
         catch (IllegalArgumentException ex) {
             fail("shouldn't have gotten here...");
@@ -52,7 +43,7 @@ public class are_there_enough_argumentsSteps {
 
     @Then("I should be told Yes")
     public void i_should_be_told_yes() {
-        assertFalse(expectedThrow);
+        assertFalse(itHasException);
     }
 
     @Given("number of arguments is {string}")
@@ -69,7 +60,7 @@ public class are_there_enough_argumentsSteps {
             fail("shouldn't have gotten here...");
         }
         catch (IllegalArgumentException ex) {
-            expectedThrow = true;
+            itHasException = true;
         }
         catch (Exception ex) {
             fail("Some other exception occurred, also shouldn't have gotten here...");
@@ -78,7 +69,7 @@ public class are_there_enough_argumentsSteps {
 
     @Then("I should be told No")
     public void i_should_be_told_no() {
-        assertTrue(expectedThrow);
+        assertTrue(itHasException);
     }
 
 }
